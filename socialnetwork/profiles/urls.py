@@ -6,6 +6,5 @@ urlpatterns = patterns('',
     # url(r'^$', 'socialnetwork.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('profiles.urls')),
+    url(r'^$', 'profiles.views.index'),
 )
