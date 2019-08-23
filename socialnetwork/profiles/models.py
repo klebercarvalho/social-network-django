@@ -2,10 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-class Profile(object):
+class Profile(models.Model):
 
-    def __init__(self, name='', email='', phone='', company_name=''):
-        self.name = name
-        self.email = email
-        self.phone = phone
-        self.company_name = company_name
+    name = models.CharField(max_length=255, name=False)
+    email = models.CharField(max_length=255, name=False)
+    phone = models.CharField(max_length=15, name=False)
+    company = models.CharField(max_length=255, name=False)
