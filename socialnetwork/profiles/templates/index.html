@@ -6,5 +6,14 @@
 </head>
 <body>
     <h1>Bem vindo ao Social Network</h1>
+    {% if profiles %}
+    <ul>
+        {% for profile in profiles %}
+        <li><a href="{% url 'show' profile.id %}">{{ profile.name }} / {{ profile.email }} </a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Nenhum Perfil encontrado</p>
+    {% endif %}
 </body>
 </html>

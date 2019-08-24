@@ -11,7 +11,7 @@ def index(request):
     # response.write("<h1>Bem-vindo ao Connectedin!</h1>")
     # response.write("<p>A sua rede social.</p>")
 
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'profiles' : Profile.objects.all()})
 
 
 def show(request, profile_id):
