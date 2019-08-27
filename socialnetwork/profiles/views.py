@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 # from django.http import HttpResponse
 from profiles.models import Profile
 
@@ -31,3 +32,13 @@ def show(request, profile_id):
 
     profile = Profile.objects.get(id=profile_id)
     return render(request, 'profile.html', { "profile" : profile})
+
+def invite(request, profile_id):
+    profile_invited = Profile.objects.get(id=profile_id)
+    profile_enable = get_profile_enable(request)
+    profile_enable.invite(profile_invited)
+    # return render(request, 'index.html', {'profiles' : Profile.objects.all()})
+    return redirect('index')
+
+def get_profile_enable(request):
+    return Profile.objects.get(id=1)

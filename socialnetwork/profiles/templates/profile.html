@@ -5,14 +5,15 @@
     <title>Social Network</title>
 </head>
 <body>
-    <h1>Detalhe Perfil</h1>
-    Name: {{profile.name}},
+    <h1>Detalhe Perfil: {{ profile.name }} </h1>
+    <a href="{% url 'invite' profile.id %}">convidar</a>
+    <p>Name: {{ profile.name }}</p>
 
-    Email: {{profile.email}},
+    <p>Email: {{ profile.email }},</p>
 
-    Phone: {{profile.phone}},
+    <p>Phone: {{ profile.phone }},<p>
 
-    Company: {{profile.company}}
+    <p>Company: {{ profile.company }}<p>
 
 </body>
 </html>
